@@ -9,9 +9,9 @@
 5. [FAQs](#faqs)
 
 
-### Installation des libraires Python
+### Installation des librairies Python
 
-<a name="Installation-des-librairies-Python"></a>
+
 
 
 <pre>Pour faire fonctionner les programmes correctement, veuillez installer les librairies suivantes : </pre>
