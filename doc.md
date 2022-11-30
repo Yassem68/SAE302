@@ -9,7 +9,7 @@
 
 
 
-```Pour faire fonctionner les programmes correctement, veuillez installer les librairies suivantes :```
+<pre>Pour faire fonctionner les programmes correctement, veuillez installer les librairies suivantes : </pre>
 
 
 pip install netaddr     /    pip3 install netaddr  
@@ -21,6 +21,20 @@ pip install os     /    pip3 install os
 pip install sys     /    pip3 install sys    
 pip install psutil     /    pip3 install psutil ( pour afficher les perfomances du système )     
 pip install platform     /    pip3 install platform  (pour afficher l'OS)  
+
+
+
+## Table of Contents
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Collaboration](#collaboration)
+5. [FAQs](#faqs)
+
+
+## Table of Contents
+<a name="general-info"></a>
+### General Info
 
 
 <pre> hello, this is just an example .... </pre>
