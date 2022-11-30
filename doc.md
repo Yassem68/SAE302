@@ -1,17 +1,11 @@
 #  Documentation de ma SAE 302
 
-## Sommaire  
-1.    __Installation des librairies Python__
-2.    __Comment lancer le serveur/client__
-3.    __Liste des commandes possibles__
-4.    __Une autre sous-puce__
 
-
-## Table of Contents
+## Table Des Matières
 1. [__Installation des librairies Python__](#Installation-des-librairies-Python)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Collaboration](#collaboration)
+2. [__Comment lancer le serveur/client__](#__Comment-lancer-le-serveur/client__)
+3. [__Liste des commandes possibles__](#installation)
+4. [__Une autre sous-puce__](#collaboration)
 5. [FAQs](#faqs)
 
 
@@ -19,7 +13,9 @@
 
 
 
-
+## Table Des Matières
+<a name="general-info"></a>
+### Installation des libraires Python
 
 
 
