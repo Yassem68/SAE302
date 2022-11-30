@@ -6,6 +6,23 @@
 3.    __Liste des commandes possibles__
 4.    __Une autre sous-puce__
 
+
+## Table of Contents
+1. [__Installation des librairies Python__](#Installation-des-librairies-Python)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Collaboration](#collaboration)
+5. [FAQs](#faqs)
+
+
+
+
+
+
+
+
+
+
 ### Installation des libraires Python
 <a name="Installation-des-libraires-Python"></a>
 
@@ -24,12 +41,7 @@ pip install platform     /    pip3 install platform  (pour afficher l'OS)
 
 
 
-## Table of Contents
-1. [__Installation des librairies Python__](#Installation-des-librairies-Python)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+
 
 
 
