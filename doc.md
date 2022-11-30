@@ -8,6 +8,7 @@
 4. [__Une autre sous-puce__](#collaboration)
 5. [FAQs](#faqs)
 
+`-------------------------`
 
 ### Installation des librairies Python
 
@@ -17,18 +18,18 @@
 <pre>Pour faire fonctionner les programmes correctement, veuillez installer les librairies suivantes : </pre>
 
 
-```pip install netaddr     /    pip3 install netaddr``` 
-```pip install netifaces     /    pip3 install netifaces```   
-```pip install socket     /    pip3 install socket``` 
-```pip install threading     /    pip3 install threading```   
-```pip install time     /    pip3 install time```  
+```pip install netaddr     /    pip3 install netaddr```   
+```pip install netifaces     /    pip3 install netifaces```    
+```pip install socket     /    pip3 install socket```   
+```pip install threading     /    pip3 install threading```     
+```pip install time     /    pip3 install time```    
 ```pip install os     /    pip3 install os```    
 ```pip install sys     /    pip3 install sys```   
 ```pip install psutil     /    pip3 install psutil``` ( pour afficher les perfomances du système )       
 ```pip install platform     /    pip3 install platform```(pour afficher l'OS)  
 
 
-## Comment lancer le serveur et le client
+### Comment lancer le serveur et le client
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
 
