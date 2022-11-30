@@ -9,8 +9,10 @@ import platform
 import psutil
 import netifaces
 import netaddr
+import shutil
 
-os = platform.system()
+
+os = ("")
 ram = psutil.virtual_memory()
 cpu = psutil.cpu_count()
 name = socket.gethostname()
@@ -21,6 +23,10 @@ netifaces.interfaces()
 port = 7100
 adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
 netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
+stockage = shutil.disk_usage("/")
+
+
+
 
 
 
@@ -42,9 +48,11 @@ class MainWindow(QMainWindow):
         namee = QPushButton("Name")
         pingg = QPushButton("Ping")
         porto= QPushButton("Port")
+        disque = QPushButton("Disque")
         btn = QPushButton("Quit")
         btn.clicked.connect(QApplication.instance().quit)
         self.label = QTextEdit("")
+        
 
 
     
@@ -55,8 +63,9 @@ class MainWindow(QMainWindow):
         grid.addWidget(namee, 8, 0, 1, 2)
         grid.addWidget(pingg, 10, 0, 1, 2)
         grid.addWidget(porto, 12, 0, 1, 2)
-        grid.addWidget(btn, 14, 0,1,2)
-        grid.addWidget(self.label, 16, 0, 1, 2)
+        grid.addWidget(btn, 16, 0,1,2)
+        grid.addWidget(disque, 14, 0, 1, 2)
+        grid.addWidget(self.label, 18, 0, 1, 2)
         
 
         rama.clicked.connect(self.__actionram)
@@ -65,6 +74,10 @@ class MainWindow(QMainWindow):
         oss.clicked.connect(self.__actionos)
         namee.clicked.connect(self.__actionname)
         porto.clicked.connect(self.__actionport)
+        disque.clicked.connect(self.__actiondisque)
+
+    def __actiondisque(self):
+        self.label.append(f"Stockage TOTAL: {round(stockage [0]/1000000000, 2)} GB \nStockage UTILISE: {round(stockage[1]/1000000000,2)} GB \nStockage RESTANT: {round(stockage [2]/1000000000,2)} GB\n")
 
     def __actionip(self):
         
@@ -72,7 +85,7 @@ class MainWindow(QMainWindow):
     
     def __actionos(self):
         
-        self.label.append(f"-- OS:{os} --\n")
+        self.label.append(f"-- OS: {platform.platform()} --\n")
     
     def __actionname(self):
         
@@ -84,7 +97,7 @@ class MainWindow(QMainWindow):
     
     def __actionram(self):
 
-        self.label.append(f"RAM TOTALE: {ram[0]/1000000000} GB \nRAM UTILISEE: {ram[1]/1000000000} GB \nRAM RESTANTE: {ram [3]/1000000000} GB\n")
+        self.label.append(f"RAM TOTALE: {round(ram[0]/1000000000,2)} GB \nRAM UTILISEE: {round(ram[1]/1000000000,2)} GB \nRAM RESTANTE: {round(ram [3]/1000000000,2)} GB\n")
     
     def __actioncpu(self):
         self.label.append(f"-- CPU USAGE: {cpu} % --\n")

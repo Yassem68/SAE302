@@ -8,7 +8,7 @@
 4. [__Une autre sous-puce__](#collaboration)
 5. [FAQs](#faqs)
 
-`-------------------------`
+## ‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎
 
 ### Installation des librairies Python
 
