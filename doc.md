@@ -3,7 +3,7 @@
 
 ## Table Des Matières
 1. [__Installation des librairies Python__](#Installation-des-librairies-Python)
-2. [__Comment lancer le serveur/client__](#__Comment-lancer-le-serveur/client__)
+2. [__Comment lancer le serveur et le client__](#__Comment-lancer-le-serveur-et-le-client__)
 3. [__Liste des commandes possibles__](#installation)
 4. [__Une autre sous-puce__](#collaboration)
 5. [FAQs](#faqs)
@@ -28,7 +28,7 @@ pip install psutil     /    pip3 install psutil ( pour afficher les perfomances 
 pip install platform     /    pip3 install platform  (pour afficher l'OS)  
 
 
-### Comment lancer le serveur/client
+### Comment lancer le serveur et le client
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
 
