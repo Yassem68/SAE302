@@ -2,7 +2,7 @@
 
 
 ## Table Des Matières
-1. [__Installation des librairies Python__](#Installation-des-librairies-Python)
+1. [Installation des librairies Python](#Installation-des-librairies-Python)
 2. [__Comment lancer le serveur/client__](#__Comment-lancer-le-serveur/client__)
 3. [__Liste des commandes possibles__](#installation)
 4. [__Une autre sous-puce__](#collaboration)
