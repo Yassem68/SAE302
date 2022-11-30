@@ -9,7 +9,7 @@
 5. [FAQs](#faqs)
 
 
-
+[General Info](#general-info)
 
 
 
@@ -20,7 +20,7 @@
 
 
 ### Installation des libraires Python
-<a name="Installation-des-libraires-Python"></a>
+<a name="Installation-des-librairies-Python"></a>
 
 <pre>Pour faire fonctionner les programmes correctement, veuillez installer les librairies suivantes : </pre>
 
@@ -228,4 +228,3 @@ Pour faire une barre de séparation il vous suffit d'écrire plusieurs `-` d'aff
 `-----------------`
 
 ----------------
-
