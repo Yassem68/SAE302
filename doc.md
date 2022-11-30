@@ -7,15 +7,15 @@
 ```Pour faire fonctionner les programmes correctement, veuillez installer les librairies suivantes :```
 
 
-```pip install netaddr``` ou ```pip3 install netaddr```
-```pip install netifaces``` ou ```pip3 install netifaces```
-```pip install socket``` ou ```pip3 install socket```
-```pip install threading``` ou ```pip3 install threading```
-```pip install time``` ou ```pip3 install time```
-```pip install os``` ou ```pip3 install os```
-```pip install sys``` ou ```pip3 install sys```
-```pip install psutil``` ou ```pip3 install psutil```  ( pour afficher les perfomances du système )
-```pip install platform``` ou ```pip3 install platform```  (pour afficher l'OS)
+```pip install netaddr```/```pip3 install netaddr```  
+```pip install netifaces```/```pip3 install netifaces```  
+```pip install socket```/```pip3 install socket```  
+```pip install threading```/```pip3 install threading```  
+```pip install time```/```pip3 install time```  
+```pip install os```/```pip3 install os```  
+```pip install sys```/```pip3 install sys```  
+```pip install psutil```/```pip3 install psutil```  ( pour afficher les perfomances du système )   
+```pip install platform```/```pip3 install platform```  (pour afficher l'OS)  
 
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
