@@ -32,6 +32,7 @@
 ```pip install psutil     /    pip3 install psutil``` ( pour afficher les perfomances du système )       
 ```pip install platform     /    pip3 install platform```(pour afficher l'OS)  
 
+##
 
 ### Comment lancer le serveur et le client
 
