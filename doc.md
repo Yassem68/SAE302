@@ -6,8 +6,8 @@
 3.    __Liste des commandes possibles__
 4.    __Une autre sous-puce__
 
-
-
+### Installation des libraires Python
+<a name="Installation-des-libraires-Python"></a>
 
 <pre>Pour faire fonctionner les programmes correctement, veuillez installer les librairies suivantes : </pre>
 
@@ -32,8 +32,8 @@ pip install platform     /    pip3 install platform  (pour afficher l'OS)
 5. [FAQs](#faqs)
 
 
-<a name="general-info"></a>
-### General Info
+
+
 
 
 <pre> hello, this is just an example .... </pre>
