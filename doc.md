@@ -28,7 +28,7 @@ pip install psutil     /    pip3 install psutil ( pour afficher les perfomances 
 pip install platform     /    pip3 install platform  (pour afficher l'OS)  
 
 
-### Comment lancer le serveur et le client
+## Comment lancer le serveur et le client
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
 
@@ -40,7 +40,7 @@ A ce moment là, vous pouvez répondre sur le serveur.
 
 Vous pouvez également effectuer des commandes sur le serveur...
 
-# Liste des commandes possibles
+## Liste des commandes possibles
 Voici un petit fichier memento pour vous indiquer les principales syntaxes que vous pouvez utiliser en markdown.
 Pour voir les détails de la syntaxe, cliquez que l'icone d'édition de ce fichier.
 
