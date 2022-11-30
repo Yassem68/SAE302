@@ -28,22 +28,19 @@ pip install psutil     /    pip3 install psutil ( pour afficher les perfomances 
 pip install platform     /    pip3 install platform  (pour afficher l'OS)  
 
 
-
-
-
-
-
-
-
-
-<pre> hello, this is just an example .... </pre>
+### Comment lancer le serveur/client
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
 
 Pour lancer le serveur, il faut lancer le fichier server.py avec python3 ou python
 Pour lancer le client, il faut lancer le fichier client.py avec python3 ou python
 
-# Markown-memento
+Une fois sur le serveur vous pouvez commencer à dialoguer. Le client parle en premier, et vous recevez le message sur le serveur.  
+A ce moment là, vous pouvez répondre sur le serveur.
+
+Vous pouvez également effectuer des commandes sur le serveur...
+
+# Liste des commandes possibles
 Voici un petit fichier memento pour vous indiquer les principales syntaxes que vous pouvez utiliser en markdown.
 Pour voir les détails de la syntaxe, cliquez que l'icone d'édition de ce fichier.
 
