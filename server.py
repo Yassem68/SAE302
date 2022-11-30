@@ -19,8 +19,8 @@ ip = socket.gethostbyname(name)
 host = socket.gethostname()
 ip = socket.gethostbyname(host)
 netifaces.interfaces()
-adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
-netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
+#adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
+#netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 
 host = "localhost" # "", "127.0.0.1
 port = 7100
@@ -33,15 +33,22 @@ print('En attente du client')
 conn, address = server_socket.accept()
 print(f'Client connecté {address}')
 
-message = conn.recv(1024).decode()
-print(f"Message du client -> {message}")
-
-while message != 'arret':
-    message = input("Message au client ->")
-    print("Message envoyé")
-    conn.send(message.encode())
-    data = conn.recv(1024).decode()
-    print(f"Message du client :{message}")
+data = conn.recv(1024).decode()
+ 
+while data != "arret":
+    
+    if data == "ram":
+        reply = str(ram)
+        conn.send(reply.encode())
+        print("Message ram envoyé")
+        data = conn.recv(1024).decode()
+        print(f"Message envoyé")
+    else:
+        message = input("Message au client ->")
+        print("Message envoyé")
+        conn.send(message.encode())
+        data = conn.recv(1024).decode()
+        print(f"Message du client :{message}")
     if message == "arret" or data == "arret":
         break
 

@@ -1,4 +1,4 @@
-#  Documentation de ma SAE 302
+<h1> Documentation de ma SAE 302</h1>
 
 
 ## Table Des Matières
@@ -8,7 +8,15 @@
 4. [__Une autre sous-puce__](#collaboration)
 5. [FAQs](#faqs)
 
-## ‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎
+<<<<<<< HEAD
+
+=======
+
+##
+
+
+
+>>>>>>> b43f1448ac78c0318f4217e147ff8234975ecf6d
 
 ### Installation des librairies Python
 
@@ -28,6 +36,7 @@
 ```pip install psutil     /    pip3 install psutil``` ( pour afficher les perfomances du système )       
 ```pip install platform     /    pip3 install platform```(pour afficher l'OS)  
 
+##
 
 ### Comment lancer le serveur et le client
 

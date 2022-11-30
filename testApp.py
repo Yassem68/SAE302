@@ -13,16 +13,14 @@ import shutil
 
 
 os = ("")
-ram = psutil.virtual_memory()
 cpu = psutil.cpu_count()
 name = socket.gethostname()
 ip = socket.gethostbyname(name)
 host = socket.gethostname()
-ip = socket.gethostbyname(host)
 netifaces.interfaces()
 port = 7100
-adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
-netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
+#adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
+#etaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 stockage = shutil.disk_usage("/")
 
 
@@ -70,18 +68,23 @@ class MainWindow(QMainWindow):
 
         rama.clicked.connect(self.__actionram)
         cpuu.clicked.connect(self.__actioncpu)
-        ipp.clicked.connect(self.__actionip)
+        #ipp.clicked.connect(self.__actionip)
         oss.clicked.connect(self.__actionos)
         namee.clicked.connect(self.__actionname)
         porto.clicked.connect(self.__actionport)
-        disque.clicked.connect(self.__actiondisque)
+        #disque.clicked.connect(self.__actiondisque)
 
-    def __actiondisque(self):
-        self.label.append(f"Stockage TOTAL: {round(stockage [0]/1000000000, 2)} GB \nStockage UTILISE: {round(stockage[1]/1000000000,2)} GB \nStockage RESTANT: {round(stockage [2]/1000000000,2)} GB\n")
+    def __actionram(self):
+        message = "ram"
+        client_socket.send(message.encode())
+        data = client_socket.recv(1024).decode()
+        print(f"Message du serveur : {data}")
+        self.label.append(f"RAM TOTALE: {round(data[0]/1000000000,2)} GB \nRAM UTILISEE: {round(data[1]/1000000000,2)} GB \nRAM RESTANTE: {round(data [3]/1000000000,2)} GB\n")
+        #self.label.append(f"Stockage TOTAL: {round(stockage [0]/1000000000, 2)} GB \nStockage UTILISE: {round(stockage[1]/1000000000,2)} GB \nStockage RESTANT: {round(stockage [2]/1000000000,2)} GB\n")
 
-    def __actionip(self):
+    #def __actionip(self):
         
-        self.label.append(f"-- IP de votre interface réseau:{netaddr_adresse_ip} --\n")
+        #self.label.append(f"-- IP de votre interface réseau:{netaddr_adresse_ip} --\n")
     
     def __actionos(self):
         
@@ -95,9 +98,9 @@ class MainWindow(QMainWindow):
        
         self.label.append(f"-- Vous êtes sur le port{port} --\n")
     
-    def __actionram(self):
+    #def __actionram(self):
 
-        self.label.append(f"RAM TOTALE: {round(ram[0]/1000000000,2)} GB \nRAM UTILISEE: {round(ram[1]/1000000000,2)} GB \nRAM RESTANTE: {round(ram [3]/1000000000,2)} GB\n")
+        #self.label.append(f"RAM TOTALE: {round(ram[0]/1000000000,2)} GB \nRAM UTILISEE: {round(ram[1]/1000000000,2)} GB \nRAM RESTANTE: {round(ram [3]/1000000000,2)} GB\n")
     
     def __actioncpu(self):
         self.label.append(f"-- CPU USAGE: {cpu} % --\n")
@@ -107,6 +110,12 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
+
+    print(f"Ouverture de la socket sur le serveur {host} port {port}")
+    client_socket = socket.socket()
+    client_socket.connect((host, port))
+    print("Serveur est connecté")
+
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
