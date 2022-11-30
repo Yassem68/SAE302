@@ -20,8 +20,10 @@ pip install time     /    pip3 install time
 pip install os     /    pip3 install os    
 pip install sys     /    pip3 install sys    
 pip install psutil     /    pip3 install psutil ( pour afficher les perfomances du système )     
-pip install platform     /    pip3 install platform  (pour afficher l'OS)    
+pip install platform     /    pip3 install platform  (pour afficher l'OS)  
 
+
+<pre> hello, this is just an example .... </pre>
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
 
