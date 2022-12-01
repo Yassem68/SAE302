@@ -17,10 +17,11 @@ name = socket.gethostname()
 ip = socket.gethostbyname(name)
 host = socket.gethostname()
 netifaces.interfaces()
-port = 7001
+port = 7000
 adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
 netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 stockage = shutil.disk_usage("/")
+help =""
 
 
 print(f"{stockage[0] /1000000000} , {stockage[1]/1000000000}, {stockage[2]/1000000000} " )
@@ -52,9 +53,10 @@ class client(QMainWindow):
         btn = QPushButton("Quit")
         btn.clicked.connect(QApplication.instance().quit)
         self.label = QTextEdit("")
+        help = QPushButton("Help")
         
 
-
+#PARTIE GRID
     
         grid.addWidget(rama, 0, 0, 1, 2)
         grid.addWidget(cpuu, 2, 0,1,2)
@@ -66,7 +68,9 @@ class client(QMainWindow):
         grid.addWidget(btn, 16, 0,1,2)
         grid.addWidget(disque, 14, 0, 1, 2)
         grid.addWidget(self.label, 18, 0, 1, 2)
+        grid.addWidget(help, 20, 0, 1, 2)
         
+#PARTIE DES ACTIONS
 
         rama.clicked.connect(self.__actionram)
         cpuu.clicked.connect(self.__actioncpu)
@@ -75,6 +79,9 @@ class client(QMainWindow):
         namee.clicked.connect(self.__actionname)
         porto.clicked.connect(self.__actionport)
         disque.clicked.connect(self.__actiondisque)
+        help.clicked.connect(self.__actionhelp)
+
+#PARTIE FONCTION
 
     def __actionram(self):
         message = "ram"
@@ -111,6 +118,16 @@ class client(QMainWindow):
     def __actiondisque(self):
         self.label.append(f"Stockage TOTAL: {round(stockage [0]/1000000000, 2)} GB \nStockage UTILISE: {round(stockage[1]/1000000000,2)} GB \nStockage RESTANT: {round(stockage [2]/1000000000,2)} GB\n")
 
+    def __actionhelp(self):
+        message = QMessageBox()
+        message.setText("Commande disponible: \n - La commande ram permet d'afficher la ram totale, la ram utilisée et la ram libre \
+            \n - La commande ip permet d'afficher l'adresse ip de la machine \
+            \n - La commande os permet d'afficher le nom de l'os\
+            \n - La commande name permet d'afficher le nom de la machine\
+            \n - La commande port permet d'afficher le port utilisé  \
+            \n - La commande cpu permet d'afficher le nombre de coeur de la machine \
+            \n \- La commande disque permet d'afficher le stockage total, le stockage utilisé et le stockage libre")
+        message.exec()
 
 
 if __name__ == "__main__":

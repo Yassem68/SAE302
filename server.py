@@ -25,7 +25,7 @@ adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votr
 netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 
 host = "localhost" # "", "127.0.0.1
-port = 7001
+port = 7000
 
 server_socket = socket.socket()
 server_socket.bind((host, port))

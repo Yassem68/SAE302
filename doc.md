@@ -9,7 +9,7 @@
 
 
 
-### Comment installer les outils nécéssaires
+## Comment installer les outils nécéssaires
 
 
 
@@ -29,7 +29,7 @@
 
 ##
 
-### Comment démarrer les outils
+## Comment démarrer les outils
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
 
