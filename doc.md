@@ -49,7 +49,8 @@ Il est possible de faire des commandes sur le serveur, mais aussi de faire des c
 
 Les commandes sont les suivantes:
 
-   <pre> - help : affiche les commandes disponibles  
+   <pre> 
+    - help : affiche les commandes disponibles  
     - bye : permet de quitter le client  
     - arret : permet d'arrêter le serveur  
     - ram : permet d'afficher la ram utilisée  
@@ -59,6 +60,8 @@ Les commandes sont les suivantes:
     - ping : permet de ping un ip  
     - port : permet de scanner un port  
     - disque : permet d'afficher l'espace disque utilisé  </pre>
+
+Vous pouvez également utiliser ces commandes directement sur *l'application* en cliquant sur les boutons correspondants.
 
 ----------------
 
