@@ -42,7 +42,7 @@ while data != "arret":
         break
 
     elif data == "ram":
-        reply = str(f"{ram1}, {ram2}, RAM TOTAL : {ram3}")
+        reply = str(f"RAM TOTAL: {ram1/10000000}, {ram2}, RAM  : {ram3}")
         conn.send(reply.encode())
         print("Message ram envoyé")
         data = conn.recv(1024).decode()
@@ -67,7 +67,7 @@ while data != "arret":
 
     
     elif data == "ip":
-        reply = str(ip)
+        reply = str(netaddr_adresse_ip)
         conn.send(reply.encode())
         print("Message ip envoyé")
         data = conn.recv(1024).decode()
