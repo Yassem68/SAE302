@@ -17,7 +17,7 @@ name = socket.gethostname()
 ip = socket.gethostbyname(name)
 host = socket.gethostname()
 netifaces.interfaces()
-port = 7000
+port = 7001
 adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
 netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 stockage = shutil.disk_usage("/")
@@ -99,7 +99,7 @@ class client(QMainWindow):
         client_socket.send(message.encode())
         print("Le serveur se ferme")
         data = client_socket.recv(1024).decode()
-        self.label.append(f"{data}\n")
+        self.close()
 
     def __actionip(self):
         message = "ip"
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     print(f"Ouverture de la socket sur le serveur {host} port {port}")
     client_socket = socket.socket()
     client_socket.connect((host, port))
-    print("Serveur est connecté")
+    print("\n Vous êtes bien connecté sur le serveur")
 
     app = QApplication(sys.argv)
     window = client()
