@@ -16,6 +16,10 @@ ram = psutil.virtual_memory()
 ram1 = ram[0]/1000000000
 ram2 = ram[1]/1000000000
 ram3 = ram[3]/1000000000
+stockage = psutil.disk_usage("/")
+stockage1 = stockage[0]/1000000000
+stockage2 = stockage[1]/1000000000
+stockage3 = stockage[2]/1000000000
 cpu = psutil.cpu_count()
 name = socket.gethostname()
 ip = socket.gethostbyname(name)
@@ -25,7 +29,7 @@ adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votr
 netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 
 host = "localhost" # "", "127.0.0.1
-port = 7001
+port = 7000
 
 server_socket = socket.socket()
 server_socket.bind((host, port))
@@ -55,7 +59,7 @@ while data != "arret":
         conn.send(reply.encode())
         print("Message cpu envoyé")
         data = conn.recv(1024).decode()
-        print(f"Message envoyé")
+        print(f"Message reçu : {data}")
 
 
     elif data == "name":
@@ -63,7 +67,7 @@ while data != "arret":
         conn.send(reply.encode())
         print("Message name envoyé")
         data = conn.recv(1024).decode()
-        print(f"Message envoyé")
+        print(f"Message reçu : {data}")
 
     
     elif data == "ip":
@@ -71,7 +75,7 @@ while data != "arret":
         conn.send(reply.encode())
         print("Message ip envoyé")
         data = conn.recv(1024).decode()
-        print(f"Message envoyé")
+        print(f"Message reçu : {data}")
 
 
     elif data == "os":
@@ -79,7 +83,14 @@ while data != "arret":
         conn.send(reply.encode())
         print("Message os envoyé")
         data = conn.recv(1024).decode()
-        print(f"Message envoyé")
+        print(f"Message reçu : {data}")
+    
+    elif data == "stockage":
+        reply = str(f"Disque total: {stockage1[0] /1000000000} , {stockage2[1]/1000000000}, {stockage3[2]/1000000000} ")
+        conn.send(reply.encode())
+        print("Message disque envoyé")
+        data = conn.recv(1024).decode()
+        print(f"Message reçu : {data}")
 
     else:
         message = input("Message au client ->")

@@ -13,19 +13,18 @@ import shutil
 
 os = ("")
 cpu = psutil.cpu_count()
-name = socket.gethostname()
+name =("")
 ip = socket.gethostbyname(name)
 host = socket.gethostname()
 netifaces.interfaces()
-port = 7001
+stockage = ("")
 adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votre adresse ip est sur une autre interface il faudra changer "en0" par le nom de l'interface
 netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 stockage = shutil.disk_usage("/")
 help =""
 
 
-print(f"{stockage[0] /1000000000} , {stockage[1]/1000000000}, {stockage[2]/1000000000} " )
-
+port = 7000
 
 
 
@@ -99,22 +98,44 @@ class client(QMainWindow):
         client_socket.send(message.encode())
         print("Le serveur se ferme")
         data = client_socket.recv(1024).decode()
+        print(f"Message du serveur : {data}")
         self.close()
 
     def __actionip(self):
         message = "ip"
         client_socket.send(message.encode())
+        print("La requête pour l'ip a été envoyée")
         data = client_socket.recv(1024).decode()
         print(f"Message du serveur : {data}")
         self.label.append(f"-- IP: {data} --\n")
     
     def __actionos(self):
+        message = "os"
+        client_socket.send(message.encode())
+        print("La requête pour l'os a été envoyée")
+        data = client_socket.recv(1024).decode()
+        print(f"Message du serveur : {data}")
+        self.label.append(f"-- OS: {data} --\n")
         
-        self.label.append(f"-- OS: {platform.platform()} --\n")
     
     def __actionname(self):
+        message = "name"
+        client_socket.send(message.encode())
+        print("La requête pour le nom a été envoyée")
+        data = client_socket.recv(1024).decode()
+        print(f"Message du serveur : {data}")
+        self.label.append(f"-- Name: {data} --\n")
+    
+    def __actiondisque(self):
+        message = "stockage"
+        client_socket.send(message.encode())
+        print ("La requête pour le stockage a été envoyée")
+        data = client_socket.recv(1024).decode()
+        print(f"Message du serveur : {data}")
+        self.label.append(f"-- Disque: {data} --\n")
+
         
-        self.label.append(f"-- Nom de la machine:{name} --\n")
+    
     
     def __actionport(self):
        
@@ -124,8 +145,7 @@ class client(QMainWindow):
     def __actioncpu(self):
         self.label.append(f"-- CPU USAGE: {cpu} % --\n")
         
-    def __actiondisque(self):
-        self.label.append(f"Stockage TOTAL: {round(stockage [0]/1000000000, 2)} GB \nStockage UTILISE: {round(stockage[1]/1000000000,2)} GB \nStockage RESTANT: {round(stockage [2]/1000000000,2)} GB\n")
+  
 
     def __actionclear(self):
         self.label.clear()
