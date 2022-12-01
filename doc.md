@@ -44,8 +44,10 @@ Vous pouvez également effectuer des commandes sur le serveur...
 ##
 
 ## Comment utiliser le client
-    Le client est la partie qui envoie les messages au serveur. Il est possible de faire des commandes sur le serveur, mais aussi de faire des commandes sur le client.
-    Les commandes sont les suivantes:
+Le client est la partie qui envoie les messages au serveur.   
+Il est possible de faire des commandes sur le serveur, mais aussi de faire des commandes sur le client.
+
+Les commandes sont les suivantes:
 
    <pre> - help : affiche les commandes disponibles  
     - bye : permet de quitter le client  
