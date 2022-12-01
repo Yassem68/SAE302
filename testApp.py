@@ -139,7 +139,7 @@ class client(QMainWindow):
             \n \n - La commande name permet d'afficher le nom de la machine\
             \n \n - La commande port permet d'afficher le port utilisé  \
             \n \n - La commande cpu permet d'afficher le nombre de coeur de la machine \
-            \n - La commande disque permet d'afficher le stockage total, le stockage utilisé et le stockage libre")
+            \n \n - La commande disque permet d'afficher le stockage total, le stockage utilisé et le stockage libre")
         message.exec()
 
 
