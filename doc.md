@@ -1,24 +1,15 @@
-<h1> Documentation de ma SAE 302</h1>
+<h1> Documentation utilisateur</h1>
 
 
 ## Table Des Matières
-1. [__Installation des librairies Python__](#Installation-des-librairies-Python)
-2. [__Comment lancer le serveur et le client__](#Comment-lancer-le-serveur-et-le-client)
-3. [__Liste des commandes possibles__](#Liste-des-commandes-possibles)
-4. [__Une autre sous-puce__](#collaboration)
-5. [FAQs](#faqs)
-
-<<<<<<< HEAD
-
-=======
-
-##
+1. [__Comment installer les outils nécéssaires__](#Comment-installer-les-outils-nécéssaires)
+2. [__Comment démarrer les outils__](#Comment-démarrer-les-outils)
+3. [__Comment utiliser le client__](#Comment-utiliser-le-client)
 
 
 
->>>>>>> b43f1448ac78c0318f4217e147ff8234975ecf6d
 
-### Installation des librairies Python
+### Comment installer les outils nécéssaires
 
 
 
@@ -38,7 +29,7 @@
 
 ##
 
-### Comment lancer le serveur et le client
+### Comment démarrer les outils
 
 Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
 
@@ -50,9 +41,22 @@ A ce moment là, vous pouvez répondre sur le serveur.
 
 Vous pouvez également effectuer des commandes sur le serveur...
 
-## Liste des commandes possibles
-Voici un petit fichier memento pour vous indiquer les principales syntaxes que vous pouvez utiliser en markdown.
-Pour voir les détails de la syntaxe, cliquez que l'icone d'édition de ce fichier.
+##
+
+## Comment utiliser le client
+    Le client est la partie qui envoie les messages au serveur. Il est possible de faire des commandes sur le serveur, mais aussi de faire des commandes sur le client.
+    Les commandes sont les suivantes:
+
+   <pre> - help : affiche les commandes disponibles  
+    - bye : permet de quitter le client  
+    - arret : permet d'arrêter le serveur  
+    - ram : permet d'afficher la ram utilisée  
+    - cpu : permet d'afficher le cpu utilisé  
+    - os : permet d'afficher l'OS  
+    - ip : permet d'afficher l'ip du client  
+    - ping : permet de ping un ip  
+    - port : permet de scanner un port  
+    - disque : permet d'afficher l'espace disque utilisé  </pre>
 
 ----------------
 
