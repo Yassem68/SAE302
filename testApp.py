@@ -168,7 +168,7 @@ if __name__ == "__main__":
     print(f"Ouverture de la socket sur le serveur {host} port {port}")
     client_socket = socket.socket()
     client_socket.connect((host, port))
-    print("\n Vous êtes bien connecté sur le serveur")
+    print("Serveur est connecté")
 
     app = QApplication(sys.argv)
     window = client()
