@@ -57,7 +57,7 @@ Les commandes sont les suivantes:
     - cpu : permet d'afficher le cpu utilisé  
     - os : permet d'afficher l'OS  
     - ip : permet d'afficher l'ip du client  
-    - ping : permet de ping un ip  
+    - ping : permet de ping une ip  
     - port : permet de scanner un port  
     - disque : permet d'afficher l'espace disque utilisé  </pre>
 
