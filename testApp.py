@@ -24,7 +24,7 @@ stockage = shutil.disk_usage("/")
 help =""
 
 
-port = 7000
+port = 7001
 
 
 
@@ -34,7 +34,6 @@ class client(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("SAE 302")
-        self.setFixedSize(325, 540)
         grid = QGridLayout()
         widget = QWidget()
         self.setCentralWidget(widget)
@@ -90,7 +89,7 @@ class client(QMainWindow):
         client_socket.send(message.encode())
         print("La requête pour la ram a été envoyée")
         data = client_socket.recv(1024).decode()
-        print(f"Message du serveur : {data}")
+        print(f"Message du serveur : Voici vos statistiques sur la ram{data}")
         self.label.append(f"{data}\n")
         
     def __actionbtn(self):
@@ -106,7 +105,7 @@ class client(QMainWindow):
         client_socket.send(message.encode())
         print("La requête pour l'ip a été envoyée")
         data = client_socket.recv(1024).decode()
-        print(f"Message du serveur : {data}")
+        print(f"Message du serveur : Votre ip est {data}")
         self.label.append(f"-- IP: {data} --\n")
     
     def __actionos(self):
@@ -114,7 +113,7 @@ class client(QMainWindow):
         client_socket.send(message.encode())
         print("La requête pour l'os a été envoyée")
         data = client_socket.recv(1024).decode()
-        print(f"Message du serveur : {data}")
+        print(f"Message du serveur : Vous êtes sur l'OS  {data}")
         self.label.append(f"-- OS: {data} --\n")
         
     
@@ -123,7 +122,7 @@ class client(QMainWindow):
         client_socket.send(message.encode())
         print("La requête pour le nom a été envoyée")
         data = client_socket.recv(1024).decode()
-        print(f"Message du serveur : {data}")
+        print(f"Message du serveur : Le nom de votre machine est  {data}")
         self.label.append(f"-- Name: {data} --\n")
     
     def __actiondisque(self):
@@ -143,6 +142,11 @@ class client(QMainWindow):
     
    
     def __actioncpu(self):
+        message="cpu"
+        client_socket.send(message.encode())
+        print("La requête pour le cpu a été envoyée")
+        data = client_socket.recv(1024).decode()
+        print(f"Message du serveur : Le cpu est utilisé à {data} %")
         self.label.append(f"-- CPU USAGE: {cpu} % --\n")
         
   

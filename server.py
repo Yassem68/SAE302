@@ -29,7 +29,7 @@ adresse_ip = netifaces.ifaddresses('en0')[2][0]['addr'] # en0 = ethernet,si votr
 netaddr_adresse_ip = netaddr.IPAddress(adresse_ip)
 
 host = "localhost" # "", "127.0.0.1
-port = 7000
+port = 7001
 
 server_socket = socket.socket()
 server_socket.bind((host, port))
@@ -46,7 +46,7 @@ while data != "arret":
         break
 
     elif data == "ram":
-        reply = str(f"RAM TOTAL: {ram1/10000000}, {ram2}, RAM  : {ram3}")
+        reply = str(f"RAM Total: {round(ram1, 2)} GB \n , RAM disponible: {round(ram2,2)},  \n RAM utilisée : {round(ram3,2)}")  
         conn.send(reply.encode())
         print("Message ram envoyé")
         data = conn.recv(1024).decode()
@@ -59,7 +59,7 @@ while data != "arret":
         conn.send(reply.encode())
         print("Message cpu envoyé")
         data = conn.recv(1024).decode()
-        print(f"Message reçu : {data}")
+        print(f"Message reçu :  {data} ")
 
 
     elif data == "name":
