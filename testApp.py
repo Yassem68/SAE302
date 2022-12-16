@@ -2,9 +2,6 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtCore import *
 import socket
 import sys
-import time
-import socketserver
-import platform
 import psutil
 import netifaces
 import netaddr
@@ -24,7 +21,7 @@ stockage = shutil.disk_usage("/")
 help =""
 
 
-port = 7001
+port = 7000
 
 
 
@@ -77,6 +74,7 @@ class client(QMainWindow):
         oss.clicked.connect(self.__actionos)
         namee.clicked.connect(self.__actionname)
         porto.clicked.connect(self.__actionport)
+        pingg.clicked.connect(self.__actionping)
         disque.clicked.connect(self.__actiondisque)
         help.clicked.connect(self.__actionhelp)
         clear.clicked.connect(self.__actionclear)
@@ -106,7 +104,7 @@ class client(QMainWindow):
         print("La requête pour l'ip a été envoyée")
         data = client_socket.recv(1024).decode()
         print(f"Message du serveur : Votre ip est {data}")
-        self.label.append(f"-- IP: {data} --\n")
+        self.label.append(f" IP: {data} \n")
     
     def __actionos(self):
         message = "os"
@@ -114,7 +112,7 @@ class client(QMainWindow):
         print("La requête pour l'os a été envoyée")
         data = client_socket.recv(1024).decode()
         print(f"Message du serveur : Vous êtes sur l'OS  {data}")
-        self.label.append(f"-- OS: {data} --\n")
+        self.label.append(f" OS: {data} \n")
         
     
     def __actionname(self):
@@ -123,7 +121,7 @@ class client(QMainWindow):
         print("La requête pour le nom a été envoyée")
         data = client_socket.recv(1024).decode()
         print(f"Message du serveur : Le nom de votre machine est  {data}")
-        self.label.append(f"-- Name: {data} --\n")
+        self.label.append(f" Name: {data} \n")
     
     def __actiondisque(self):
         message = "stockage"
@@ -131,14 +129,23 @@ class client(QMainWindow):
         print ("La requête pour le stockage a été envoyée")
         data = client_socket.recv(1024).decode()
         print(f"Message du serveur : {data}")
-        self.label.append(f"-- Disque: {data} --\n")
+        self.label.append(f"{data} \n")
 
-        
+    def __actionping(self):
+        message = "ping"
+        client_socket.send(message.encode())
+        print("La requête pour le ping a été envoyée")
+        data = client_socket.recv(1024).decode()
+        self.label.append(f" Ping: {data} ms \n")
     
     
     def __actionport(self):
-       
-        self.label.append(f"-- Vous êtes sur le port{port} --\n")
+        message = "port"
+        client_socket.send(message.encode())
+        print("La requête pour le port a été envoyée")
+        data = client_socket.recv(1024).decode()
+        print(f"Message du serveur : Vous êtes sur le port {data}")
+        self.label.append(f"Vous êtes sur le port {data} \n")
     
    
     def __actioncpu(self):
@@ -147,7 +154,7 @@ class client(QMainWindow):
         print("La requête pour le cpu a été envoyée")
         data = client_socket.recv(1024).decode()
         print(f"Message du serveur : Le cpu est utilisé à {data} %")
-        self.label.append(f"-- CPU USAGE: {cpu} % --\n")
+        self.label.append(f" CPU USAGE: {cpu} % \n")
         
   
 
