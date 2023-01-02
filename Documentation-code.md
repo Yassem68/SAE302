@@ -15,7 +15,7 @@ Les commandes que vous utilisez se trouvent dans la partie inférieure. Vous pou
 
 
 Voici un petit schéma qui vous permettra de mieux comprendre la structure de l'application.
-
+```
  -------------------------------------------
 |  ______                  _____            |
 | | RAM  |                | CPU |           |
@@ -48,7 +48,7 @@ Voici un petit schéma qui vous permettra de mieux comprendre la structure de l'
 |   --------------------------------------  |
 |                                           |
  -------------------------------------------
-
+```
 
 
 
