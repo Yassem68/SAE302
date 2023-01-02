@@ -7,7 +7,7 @@ import netifaces
 import netaddr
 import shutil
 
-
+client_socket = socket.socket()
 os = ("")
 cpu = psutil.cpu_count()
 name =("")
@@ -22,7 +22,6 @@ help =""
 
 
 port = 7000
-
 
 
 
@@ -172,6 +171,8 @@ class client(QMainWindow):
             \n \n - La commande cpu permet d'afficher le nombre de coeur de la machine \
             \n \n - La commande disque permet d'afficher le stockage total, le stockage utilisé et le stockage libre")
         message.exec()
+
+
 
 
 if __name__ == "__main__":

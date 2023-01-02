@@ -15,13 +15,7 @@ ram = psutil.virtual_memory()
 ram1 = ram[0]/1000000000
 ram2 = ram[1]/1000000000
 ram3 = ram[3]/1000000000
-ping = os.system("ping -c 1 " + host)
-if ping == 0:
-    pingstatus = "Network Active"
-    print("Le ping a fonctionné")
-else:
-    pingstatus = "Network Error"
-    print("Le ping n'a pas fonctionné")
+
 stockage = psutil.disk_usage("/")
 stockage1 = stockage[0]/1000000000
 stockage2 = stockage[1]/1000000000
@@ -41,7 +35,7 @@ port = 7000
 
 server_socket = socket.socket()
 server_socket.bind((host, port))
-server_socket.listen(1)
+server_socket.listen(5)
 
 print('En attente du client')
 conn, address = server_socket.accept()

@@ -31,7 +31,7 @@
 
 ## Comment démarrer les outils
 
-Vous devez d'abord commencer par lancer le serveur.py, puis le client.py
+Vous devez d'abord commencer par lancer le serveur.py, puis le test.py
 
 Pour lancer le serveur, il faut lancer le fichier server.py avec python3 ou python
 Pour lancer le client, il faut lancer le fichier client.py avec python3 ou python
@@ -62,4 +62,8 @@ Les commandes sont les suivantes:
     - disque : permet d'afficher l'espace disque utilisé  </pre>
 
 Vous pouvez également utiliser ces commandes directement sur *l'application* en cliquant sur les boutons correspondants.
+
+
+
+<pre>Yassem MOHAREB RT222 <pre>
 
